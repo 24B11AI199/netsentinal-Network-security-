@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NetSentinel</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="background-grid"></div>
+
+<header>
+
+<div class="logo">
+
+🛡️ NetSentinel
+
+</div>
+
+<div class="subtitle">
+
+AI Powered Network Intrusion Detection System
+
+</div>
+
+</header>
+
+<div class="dashboard">
+
+<div class="left-panel">
+
+<div class="glass">
+
+<h2>Upload Network Dataset</h2>
+
+<input type="file" id="csvFile">
+
+<button onclick="uploadFile()">
+
+Analyze Traffic
+
+</button>
+
+<div id="loading">
+
+Analyzing using Isolation Forest...
+
+</div>
+
+</div>
+
+<div class="glass">
+
+<h2>Detection Summary</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Total Packets</h3>
+
+<h1 id="records">0</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Threats</h3>
+
+<h1 id="threats">0</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Safe Packets</h3>
+
+<h1 id="safe">0</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Risk</h3>
+
+<h1 id="risk">
+
+SAFE
+
+</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="glass">
+
+<h2>AI Information</h2>
+
+<table>
+
+<tr>
+
+<td>Model</td>
+
+<td>Isolation Forest</td>
+
+</tr>
+
+<tr>
+
+<td>Status</td>
+
+<td id="modelStatus">
+
+ONLINE
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Accuracy</td>
+
+<td>96%</td>
+
+</tr>
+
+<tr>
+
+<td>Database</td>
+
+<td id="dbStatus">
+
+Connected
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<div class="glass">
+
+<h2>Threat Percentage</h2>
+
+<div class="progress">
+
+<div id="progressBar"></div>
+
+</div>
+
+<h3 id="percentage">
+
+0%
+
+</h3>
+
+</div>
+
+<div class="glass">
+
+<h2>Recent Activity</h2>
+
+<ul id="activityLog">
+
+<li>System Started</li>
+
+<li>Waiting for Dataset...</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="right-panel">
+
+<div id="earth-container"></div>
+
+<div id="globeResult">
+
+NETWORK HEALTHY
+
+</div>
+
+<div class=" glass chart-container">
+
+<h2>Threat Distribution</h2>
+
+<canvas id="pieChart"></canvas>
+
+</div>
+
+<div class="glass networkBox">
+
+<h2>Network Topology</h2>
+
+<div class="network">
+
+<div class="node green">
+
+Laptop
+
+</div>
+
+<div class="line"></div>
+
+<div class="node green">
+
+Router
+
+</div>
+
+<div class="line"></div>
+
+<div class="node green">
+
+Firewall
+
+</div>
+
+<div class="line"></div>
+
+<div class="node green">
+
+Server
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
